@@ -7,6 +7,9 @@ mult = list(0.5, 10),
 mindex = list(0, 10),
 pan = list(0, 1))
 
+## Values to create sine wave function table in csound
+f <- c(1, 0, 2048, 10, 1)
+
 set.seed(100)
 ilist <- list(rscore(150, paramlist, funcname = "rnorm"))
 outfile <- "rnorm100.wav"
