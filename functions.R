@@ -1,8 +1,8 @@
 require(csound)
 
 linear.scale <- function(x, min, max) {
-  ## Linearly rescales vector x so that "lower" is the minimum
-  ## and "upper" the maximum
+  ## Linearly rescales vector x so that "min" is the minimum
+  ## and "max" the maximum
 
   if(min>max) {
     ## Allow for reversed polarity
@@ -23,6 +23,5 @@ rscore <- function(n, paramlist, funcname = "runif", instr = 1) {
   trix <- sapply(paramlist, function(x) {
     linear.scale(func(n), x[[1]], x[[2]])
   })
-  cbind(1, trix)
+  cbind(instr, trix)
 }
-
